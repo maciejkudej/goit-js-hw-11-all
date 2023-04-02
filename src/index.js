@@ -3,6 +3,13 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 import { fetchImages } from './fetchImages';
 import Notiflix from 'notiflix';
 
+Notiflix.Notify.init({
+  width: '280px',
+  position: 'center-top',
+  distance: '90px',
+  timeout: 2000,
+});
+
 const searchInput = document.querySelector('.search-form');
 const gallery = document.querySelector('.gallery');
 const buttonLoadMore = document.querySelector('.load-more');
@@ -91,16 +98,16 @@ function renderGallery(hits) {
           <img class="gallery__image" src="${hit.webformatURL}" alt="${hit.tags}" loading="lazy" />
           <div class="info">
             <p class="info-item">
-              <b>Likes: ${hit.likes}</b>
+              <b>Likes</b><p>${hit.likes}</p>
             </p>
             <p class="info-item">
-              <b>Views: ${hit.views}</b>
+              <b>Views</b><p>${hit.views}</p>
             </p>
             <p class="info-item">
-              <b>Comments: ${hit.comments}</b>
+              <b>Comments</b><p>${hit.comments}</p>
             </p>
             <p class="info-item">
-              <b>Downloads: ${hit.downloads}</b>
+              <b>Downloads</b><p>${hit.downloads}</p>
             </p>
           </div>
         </a>
